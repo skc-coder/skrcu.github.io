@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shekhar Chaurasiya — Computer Science & Systems Engineer</title>
+  <meta name="description" content="Personal portfolio and technical resume of Shekhar Chaurasiya. B.Tech CS & Engineering (CGPA 9.1/10), GATE 2026 CS AIR 2098, IIITH PGEE AIR 392. Low-level C/C++ programming, Linux automation, browser extensions, and cloud pipelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --panel: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bold: #f0f6fc;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-green: #3fb950;
+      --accent-purple: #bc8cff;
+      --accent-orange: #d29922;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-bold);
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--accent-green);
+      font-family: var(--font-mono);
+      margin-top: 4px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .dl-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      font-weight: 500;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text-bold);
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #21262d;
+      border-color: #8b949e;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #238636;
+      border-color: #2ea043;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #2ea043;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-bold);
+    }
+
+    .card-subtitle {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      border-radius: 4px;
+      background: #21262d;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    .badge-green {
+      color: var(--accent-green);
+      background: rgba(63, 185, 80, 0.1);
+      border-color: rgba(63, 185, 80, 0.3);
+    }
+
+    .badge-orange {
+      color: var(--accent-orange);
+      background: rgba(210, 153, 34, 0.1);
+      border-color: rgba(210, 153, 34, 0.3);
+    }
+
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stat-number {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-bold);
+      font-family: var(--font-mono);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    ul.clean-list {
+      list-style-type: none;
+    }
+
+    ul.clean-list li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 8px;
+    }
+
+    ul.clean-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-bold);
+    }
+
+    .project-tags {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-top: 40px;
+      font-size: 12px;
+      color: var(--text-muted);
+      text-align: center;
+      font-family: var(--font-mono);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>SHEKHAR CHAURASIYA</h1>
+          <div class="subtitle">B.Tech CS & Engineering Graduate | Systems & Automation</div>
+        </div>
+        <div class="stat-box" style="text-align: right;">
+          <div class="stat-number" style="color: var(--accent-green);">AIR 2098</div>
+          <div class="stat-label">GATE 2026 CS & IT (Score: 644)</div>
+        </div>
+      </div>
+
+      <div class="contact-bar">
+        <div class="contact-item">📍 Jaipur, Rajasthan, India</div>
+        <div class="contact-item">📞 +91 823-394-9673</div>
+        <div class="contact-item">✉️ <a href="mailto:shekharium@gmail.com">shekharium@gmail.com</a></div>
+        <div class="contact-item">🌐 <a href="https://github.com/skc-coder" target="_blank">github.com/skc-coder</a></div>
+        <div class="contact-item">💼 <a href="https://www.linkedin.com/in/shekharcha/" target="_blank">linkedin.com/in/shekharcha</a></div>
+        <div class="contact-item">🧩 <a href="https://leetcode.com/u/user5730ZD/" target="_blank">leetcode.com/u/user5730ZD</a></div>
+      </div>
+
+      <div class="dl-buttons">
+        <a href="pdf_deliverables/resume_2page_nocert.pdf" target="_blank" class="btn btn-primary">📄 2-Page Resume PDF</a>
+        <a href="pdf_deliverables/resume_2page_with_certs.pdf" target="_blank" class="btn">📜 2-Page + Certs Bundle (13 Pgs)</a>
+        <a href="pdf_deliverables/resume_multipage_nocert.pdf" target="_blank" class="btn">📑 Multi-Page Resume PDF</a>
+        <a href="pdf_deliverables/resume_multipage_with_certs.pdf" target="_blank" class="btn">📑 Master Cert Bundle (14 Pgs)</a>
+      </div>
+    </header>
+
+    <!-- ACADEMIC & COMPETITIVE -->
+    <section>
+      <div class="section-title">Academic & Competitive Rankings</div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Rajasthan Technical University</span>
+            <span class="badge badge-green">CGPA 9.1 / 10.0</span>
+          </div>
+          <div class="card-subtitle">B.Tech in Computer Science & Engineering (2022 — 2026)</div>
+          <div class="card-body" style="margin-top: 8px;">
+            Core Focus: Data Structures & Algorithms, Discrete Mathematics, Operating Systems, DBMS, Computer Networks, System Programming, Linear Algebra, Group Theory.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">GATE 2026 (CS & IT)</span>
+            <span class="badge badge-orange">AIR 2098 / Score 644</span>
+          </div>
+          <div class="card-subtitle">Top ~0.99% out of 211,020 national candidates</div>
+          <div class="card-body" style="margin-top: 8px;">
+            Also secured <strong>All India Rank 392</strong> in IIITH PGEE nationwide entrance exam for CS admissions.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS -->
+    <section>
+      <div class="section-title">Technical Skills & Practical Usage</div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title" style="margin-bottom: 6px;">Discrete & Foundational Mathematics</div>
+          <div class="card-body">
+            Deep problem-solving mastery in <strong>Discrete Mathematics</strong> (Logic, Calculus, Set Theory, Combinatorics, Graph Theory, Recurrence Relations), <strong>Linear Algebra</strong>, and <strong>Group Theory</strong> (Abstract Algebra).
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="margin-bottom: 6px;">C & Modern C++ Systems Programming</div>
+          <div class="card-body">
+            Object-Oriented Programming (OOP), manual memory management (pointers, <code>malloc</code>/<code>free</code>, stack allocation), templates, custom parsing engines (Infix-to-Postfix conversion), Sudoku Backtracking engine.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="margin-bottom: 6px;">Python & Automation Scripting</div>
+          <div class="card-body">
+            Proficient in file I/O, regex, JSON parsing, PyDrive/Google Drive API, Telegram Bot API. Built cloud pipelines (<code>telegram-to-drive</code>), web scrapers (<code>BeautifulSoup</code>), task management CLI tools.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title" style="margin-bottom: 6px;">Fedora Linux Systems & Extensions</div>
+          <div class="card-body">
+            Primary personal OS: <strong>Fedora Linux Workstation</strong>. Shell scripting (Bash/zsh), cron automation, Vim/Emacs modal editing, dotfiles. Chromium Extensions (Manifest V3, JavaScript) for search/video productivity.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <div class="section-title">Key Engineering & Technical Projects</div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        
+        <div class="card">
+          <div class="project-header">
+            <span class="project-title">GATE Exam Mock Test Interface & Portal Engine</span>
+            <span class="project-tags">JavaScript, HTML5, Local Engine | <a href="https://github.com/skc-coder/gate-core" target="_blank">skc-coder/gate-core</a></span>
+          </div>
+          <ul class="clean-list" style="margin-top: 6px;">
+            <li>Built a custom offline-first mock test interface mirroring the official GATE examination environment for personal exam practice and simulation.</li>
+            <li>Implemented interactive virtual keypad controls, question status navigation palette, countdown timer management, and real-time score analytics without external network dependency.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="project-header">
+            <span class="project-title">PyQHub — Technical University Semester PYQ Platform</span>
+            <span class="project-tags">TypeScript, Web App | <a href="https://github.com/skc-coder/pyqhub" target="_blank">skc-coder/pyqhub</a></span>
+          </div>
+          <ul class="clean-list" style="margin-top: 6px;">
+            <li>Developed a web repository platform to accumulate, organize, and search previous year semester exam papers across technical universities (RTU, AKTU, and others).</li>
+            <li>Implemented structured course/subject paper categorizations and fast search filtering to help university engineering students prepare for semester exams.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="project-header">
+            <span class="project-title">WebTools & FocusTube (YT Master) Chromium Extensions</span>
+            <span class="project-tags">Chrome Extensions, Manifest V3, JS | <a href="https://github.com/skc-coder/webtools" target="_blank">skc-coder/webtools</a></span>
+          </div>
+          <ul class="clean-list" style="margin-top: 6px;">
+            <li>Engineered Manifest V3 browser extensions featuring global hotkey search bar focusing ('/' shortcut), Brave-to-Google image redirects, and distraction-free YouTube UI toggles.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="project-header">
+            <span class="project-title">Telegram to Google Drive Automated Cloud Pipeline</span>
+            <span class="project-tags">Python, Telegram API, PyDrive | <a href="https://github.com/skc-coder/telegram-to-drive" target="_blank">skc-coder/telegram-to-drive</a></span>
+          </div>
+          <ul class="clean-list" style="margin-top: 6px;">
+            <li>Architected an automated cloud ingestion pipeline in Python that intercepts media files from Telegram channels and streams them directly into Google Drive storage using OAuth2.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INDUSTRY CERTIFICATIONS -->
+    <section>
+      <div class="section-title">Industry Certifications & Credentials</div>
+      <div class="card">
+        <ul class="clean-list">
+          <li><strong>NPTEL Programming in Java (MoE, Govt. of India):</strong> Awarded <strong>Elite Certificate (80% Score)</strong> | Top performer out of 14,693 candidates.</li>
+          <li><strong>NPTEL Problem Solving in C:</strong> Awarded <strong>Elite Certificate (73% Score)</strong> out of 3,749 candidates.</li>
+          <li><strong>NPTEL Programming in Modern C++:</strong> Awarded <strong>61% Score</strong> (12-week course).</li>
+          <li><strong>Salesforce Certified AI Associate (ID: 6127333)</strong> &amp; <strong>Salesforce Certified Associate (ID: 6030076)</strong> (2025).</li>
+          <li><strong>Building with Google Gemini (Advanced &amp; Ultra)</strong> &amp; <strong>Raspberry Pi Essential Training</strong> (LinkedIn Learning 2025).</li>
+          <li><strong>C Programming For Beginners Masterclass:</strong> Udemy (25.5 hours) | <strong>HACK-AIETM-2024 Participation</strong> (May 2024).</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      Shekhar Chaurasiya — Built with clean engineering standards & zero fluff. Hosted on GitHub Pages.
+    </footer>
+  </div>
+
+</body>
+</html>
